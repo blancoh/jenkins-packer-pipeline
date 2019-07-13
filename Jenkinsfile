@@ -106,9 +106,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-      sh 'vpc_id=`aws ec2 describe-vpcs --filters "Name=tag:Name,Values=Packer_VPC" --query 'Vpcs[*].VpcId' --output text`'
-      sh 'subnet_id=`aws ec2 describe-subnets --filters "Name=tag:Name,Values=Public Subnet A" --query 'Subnets[*].SubnetId' --output text`',
-            sh '/usr/local/bin/packer build -var "aws_vpc=$vpc_id" -var "aws_subnet=$subnet_id" packer_build.json'
+            sh 'run_packer_buld.sh'
           }
         }
       }
