@@ -30,28 +30,28 @@ resource "aws_internet_gateway" "gw" {
     }
 }
 
-resource "aws_network_acl" "all" {
-   vpc_id = "${aws_vpc.default.id}"
-    egress {
-        protocol = "-1"
-        rule_no = 2
-        action = "allow"
-        cidr_block =  "0.0.0.0/0"
-        from_port = 0
-        to_port = 0
-    }
-    ingress {
-        protocol = "-1"
-        rule_no = 1
-        action = "allow"
-        cidr_block =  "0.0.0.0/0"
-        from_port = 0
-        to_port = 0
-    }
-    tags = {
-        Name = "open acl"
-    }
-}
+#resource "aws_network_acl" "all" {
+#   vpc_id = "${aws_vpc.default.id}"
+#    egress {
+#        protocol = "-1"
+#        rule_no = 2
+#        action = "allow"
+#        cidr_block =  "0.0.0.0/0"
+#        from_port = 0
+#        to_port = 0
+#    }
+#    ingress {
+#        protocol = "-1"
+#        rule_no = 1
+#        action = "allow"
+#        cidr_block =  "0.0.0.0/0"
+#        from_port = 0
+#        to_port = 0
+#    }
+#    tags = {
+#        Name = "open acl"
+#    }
+#}
 
 resource "aws_route_table" "public_route_a" {
   vpc_id = "${aws_vpc.default.id}"
