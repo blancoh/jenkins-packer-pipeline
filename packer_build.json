@@ -28,21 +28,6 @@
     ],
     "provisioners": [
         {
-            "type": "file",
-            "source": "./welcomefile",
-            "destination": "/home/ubuntu/"
-        },
-        {
-            "type": "shell",
-            "inline":[
-                "ls -al /home/ubuntu",
-                "cat /home/ubuntu/welcomefile",
-                "sudo apt-get -y update",
-                "sudo apt-get -y upgrade",
-                "sudo dpkg-reconfigure tzdata"
-            ]
-        },
-        {
             "type": "shell",
             "script": "./provision.sh"
         }
