@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Executing Terraform Apply on Packer VPC..."
 /usr/local/bin/terraform-0.12.3 apply -auto-approve
 
 vpc_id=`aws ec2 describe-vpcs --filters "Name=tag:Name,Values=Packer_VPC" --query 'Vpcs[*].VpcId' --output text`
@@ -8,6 +9,7 @@ echo $vpc_id
 subnet_id=`aws ec2 describe-subnets --filters "Name=tag:Name,Values=Public Subnet A" --query 'Subnets[*].SubnetId' --output text`
 echo $subnet_id
 
+echo "Creating Packer Build json file..."
 tee <<EOF packer_build_new.json >/dev/null
 {
     "variables": {
@@ -46,4 +48,8 @@ tee <<EOF packer_build_new.json >/dev/null
 }
 EOF
 
+echo "Building packer image now..."
 /usr/local/bin/packer build packer_build_new.json
+
+echo "Execute Terraform Destroy on Packer VPC"
+/usr/local/bin/terraform-0.12.3 destroy -auto-approve

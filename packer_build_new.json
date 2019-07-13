@@ -21,9 +21,9 @@
               "most_recent": true
             },
             "ssh_username": "ubuntu",
-            "subnet_id": "subnet-0d7ab946958836821",
+            "subnet_id": "subnet-06a8184698bb95b82",
             "type": "amazon-ebs",
-            "vpc_id": "vpc-034cf40690a68d012"
+            "vpc_id": "vpc-028f15b773e6f91e8"
         }
     ],
     "provisioners": [
