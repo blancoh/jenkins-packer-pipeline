@@ -106,7 +106,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh '/usr/local/bin/packer build packer_build_new.json'
+            sh '/usr/local/bin/packer build -var "aws_vpc=$vpc_id" -var "aws_subnet=$subnet_id" packer_build.json
           }
         }
       }
