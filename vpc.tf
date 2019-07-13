@@ -29,14 +29,6 @@ resource "aws_internet_gateway" "gw" {
         Name = "Internet Gateway"
     }
 }
-#resource "aws_eip" "natgw_a" {
-#    vpc      = true
-#}
-#resource "aws_nat_gateway" "public_nat_a" {
-#    allocation_id = "${aws_eip.natgw_a.id}"
-#    subnet_id = "${aws_subnet.PublicSubnetA.id}"
-#    depends_on = ["aws_internet_gateway.gw"]
-#}
 
 resource "aws_network_acl" "all" {
    vpc_id = "${aws_vpc.default.id}"
