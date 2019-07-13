@@ -6,11 +6,11 @@ Steps:
 
 Jenkins is used to execute the pipeline.
 
-1) Terraform will create the Packer Build VPC.
+1) Terraform creates the Amazon Packer Build VPC.
 
 2) Bash script named create_json.sh will generate a packer_build_new.json file.
 
-3) Packer tool will generate the new Amazon AMI and output the ID once finished.
+3) Packer builds the new Amazon AMI image and prints the new ami id to stdout.
 
-4) Terraform will destroy the Packer Build VPC.
+4) Terraform destroys the Amazon Packer Build VPC.
 
