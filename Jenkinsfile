@@ -106,7 +106,7 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh 'run_packer_buld.sh'
+            sh 'bash run_packer_build.sh'
           }
         }
       }
