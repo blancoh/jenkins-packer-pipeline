@@ -14,4 +14,4 @@ Jenkins Pipeline will be used to execute the following steps.
 
 4) Terraform destroys the Amazon Packer Build VPC.
  
-5) New AMI ID will be located in Packer build logs.
+5) New AMI ID will be located in the logs of the "Packer Build Image" pipeline tile.
