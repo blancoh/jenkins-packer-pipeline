@@ -6,7 +6,7 @@ Jenkins Pipeline will be used to execute the following steps.
 
 1) Jenkins pulls the latest Github repository.
 
-2) Terraform performs init, plan and apply to create the Amazon Packer Build VPC.  
+2) Terraform performs init, plan, apply and show. This should create the Amazon Packer Build VPC.  
 
 3) The run_packer_build.sh shell script extracts the vpc_id and subnet_id variables using the AWS cli tools for use with the packer build command. The AMI must be saved and snapshot must be successful before proceeding to next step.
 
