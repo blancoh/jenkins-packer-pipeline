@@ -2,8 +2,6 @@ Packer Build Pipeline
 
 Purpose of this project is to dynamically create an Amazon VPC using Terraform, build OS image(s) using Hashicorp Packer tool then have Terraform destroy the VPC after the new AMI has been saved.
 
-Steps:
-
 Jenkins Pipeline will be used to execute the following steps.
 
 1) Jenkins pulls the latest Github repository.
