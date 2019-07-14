@@ -2,7 +2,7 @@ Jenkins Packer Build Pipeline
 
 OS version: Ubuntu Bionic 18.04
 
-Purpose of this project is to create a fresh Amazon VPC to build Amazon Machine Image (AMI) then destroy the VPC. 
+Purpose of this project is to Create an Amazon VPC, Build an Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
 
 Jenkinsfile Pipeline script will execute the following steps.
 
