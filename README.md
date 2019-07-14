@@ -18,4 +18,4 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 3) Execute run_packer_build.sh script to build new AMI with Packer.
 
-4) Terraform executes a destroy to delete the Amazon Packer VPC.
+4) Terraform destroy to delete the Amazon Packer VPC.
