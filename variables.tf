@@ -1,5 +1,4 @@
 variable "public_key_path" {
-  # default = "/home/vagrant/.ssh/id_rsa.pub"
    default = "/apps/terraform/keys/id_rsa.pub"
 }
 variable "key_name" {
