@@ -6,7 +6,13 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 1) Jenkins pulls the latest Github repository and executes the latest Jenkinsfile.
 
-2) Terraform executes init, plan, apply and show to create the Amazon Packer VPC.  
+2) Terraform init to download and required modules.
+
+3) Terraform plan to pre-validate apply will be successful.
+
+4) Terraform apply to create the Amazon Packer VPC.
+
+5) Terraform show to display what was recently created.  
 
 3) Execute the run_packer_build.sh script to build store and snapshot the new AMI before proceeding to next step.
 
