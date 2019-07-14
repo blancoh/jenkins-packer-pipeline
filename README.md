@@ -6,7 +6,7 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 1) Jenkins pulls the latest Github repository and executes the latest Jenkinsfile.
 
-2) Terraform init to download and required modules.
+2) Terraform init to download required modules.
 
 3) Terraform plan to pre-validate apply will be successful.
 
