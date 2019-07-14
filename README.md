@@ -2,9 +2,9 @@ Jenkins Packer Build Pipeline
 
 Purpose of this project is to create a fresh Amazon VPC to build Amazon Machine Images (AMI) then destroy the VPC. 
 
-Jenkins Pipeline will be used to execute the following steps.
+Jenkinsfile Pipeline script will execute the following steps.
 
-1) Jenkins downloads and executes the latest Jenkinsfile from this Github repository.
+1) Jenkins pulls the latest Github repository and executes the latest Jenkinsfile.
 
 2) Terraform executes init, plan, apply and show to create the Amazon Packer VPC.  
 
