@@ -29,7 +29,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "./provision.sh"
+            "script": "./provision-vm.sh"
         }
     ]
 }
