@@ -10,7 +10,7 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 2) Terraform init to download required modules.
 
-3) Terraform plan to pre-validate apply will be successful.
+3) Terraform plan to validate configuration.
 
 4) Terraform apply to create the Amazon Packer VPC.
 
