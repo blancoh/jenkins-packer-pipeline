@@ -13,7 +13,7 @@ resource "aws_subnet" "PublicSubnetA" {
   cidr_block = "${var.public_subnet_a}"
   map_public_ip_on_launch = true
   tags = {
-        Name = "Public Subnet A"
+        Name = "Packer Subnet A"
   }
  availability_zone = "${data.aws_availability_zones.available.names[0]}"
 }
@@ -33,7 +33,7 @@ resource "aws_internet_gateway" "gw" {
 resource "aws_route_table" "public_route_a" {
   vpc_id = "${aws_vpc.default.id}"
   tags = {
-      Name = "Public Route A"
+      Name = "Packer Route A"
   }
   route {
         cidr_block = "0.0.0.0/0"
