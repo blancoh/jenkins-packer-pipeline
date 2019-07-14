@@ -4,7 +4,7 @@ Purpose of this project is to dynamically create an Amazon VPC using Terraform, 
 
 Jenkins Pipeline will be used to execute the following steps.
 
-1) Jenkins pulls the latest Jenkinsfile from the Github repository.
+1) Jenkins downloads and executes the latest iPipeline script from the Jenkinsfile in the Github repository.
 
 2) Terraform executes init, plan, apply and show. The Amazon Packer Build VPC should be created at this point.  
 
