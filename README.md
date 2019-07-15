@@ -1,6 +1,8 @@
 Jenkins Packer Build Pipeline
 
-OS version: Ubuntu Bionic 18.04
+Current OS version: Ubuntu Bionic 18.04
+
+Jenkins required plugins: Pipeline, CloudBees AWS Credentials, GIT
 
 Purpose of this project is to Create an Amazon VPC, Build an Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
 
