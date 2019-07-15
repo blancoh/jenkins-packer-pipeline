@@ -1,4 +1,4 @@
-Purpose of this project is to Create an Amazon VPC, Build an Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
+Project Goal: Create an Amazon VPC, Build an Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
 
 Jenkins Packer Build Pipeline
 
