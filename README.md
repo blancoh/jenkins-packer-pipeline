@@ -1,10 +1,10 @@
-Project Goal: Create an Amazon VPC, Build an Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
+Name: Jenkins Packer Build Pipeline
 
-Jenkins Packer Build Pipeline
-
-Current OS version: Ubuntu Bionic 18.04
+Project Goal: Create an Amazon VPC, Build Custom Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
 
 Jenkins required plugins: Pipeline, CloudBees AWS Credentials, GIT
+
+Current OS version: Ubuntu Bionic 18.04
 
 Jenkinsfile Pipeline script will execute the following steps.
 
@@ -18,6 +18,6 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 5) Terraform show to display what was recently created.  
 
-3) Execute run_packer_build.sh script to build new AMI with Packer.
+3) Execute run_packer_build.sh script to build custom AMI with Packer.
 
 4) Terraform destroy to delete the Amazon Packer VPC.
