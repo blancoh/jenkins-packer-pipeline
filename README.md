@@ -8,7 +8,7 @@ Current OS version: Ubuntu Bionic 18.04
 
 Jenkinsfile Pipeline script will execute the following steps.
 
-1) Jenkins pulls the latest Github repository and executes the latest Jenkinsfile.
+1) Pull the Github Master branch and execute the latest Jenkinsfile.
 
 2) Terraform init to download required modules.
 
