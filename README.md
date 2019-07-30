@@ -1,4 +1,4 @@
-Name: Jenkins Packer Build Pipeline
+# Jenkins Packer Build Pipeline
 
 Project Goal: Create an Amazon VPC, Build Custom Amazon Machine Image (AMI) and Destroy the Amazon VPC. 
 
