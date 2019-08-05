@@ -21,3 +21,11 @@ Jenkinsfile Pipeline script will execute the following steps.
 3) Execute run_packer_build.sh script to build custom AMI with Packer.
 
 4) Terraform destroy to delete the Amazon Packer VPC.
+
+Requirements:
+Workspace cleanup plugin - https://plugins.jenkins.io/ws-cleanup
+Github Authentication plugin
+CloudBees AWS Credentials plugins
+Pipeline plugin
+Terraform
+Packer
