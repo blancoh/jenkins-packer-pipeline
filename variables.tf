@@ -2,11 +2,11 @@ variable "public_key_path" {
    default = "/apps/terraform/keys/id_rsa.pub"
 }
 variable "key_name" {
-  description = "Desired name of AWS key pair"
+  description = "vagrant AWS key pair"
   default     = "vagrant"
 }
 variable "aws_region" {
-  description = "AWS region to launch servers."
+  description = "AWS region"
   default     = "us-east-1"
 }
 # Ubuntu Bionic 18.04 LTS (x64)
