@@ -1,9 +1,9 @@
 variable "public_key_path" {
-   default = "/apps/terraform/keys/id_rsa.pub"
+   default = "~/.ssh/id_rsa.pub"
 }
 variable "key_name" {
-  description = "vagrant AWS key pair"
-  default     = "vagrant"
+  description = "RSA key pair"
+  default     = "id_rsa"
 }
 variable "aws_region" {
   description = "AWS region"
