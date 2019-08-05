@@ -23,6 +23,7 @@ Jenkinsfile Pipeline script will execute the following steps.
 4) Terraform destroy to delete the Amazon Packer VPC.
 
 Requirements:
+
 Workspace cleanup plugin - https://plugins.jenkins.io/ws-cleanup
 
 Github Authentication plugin
