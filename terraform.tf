@@ -1,9 +1,7 @@
-# Specify the provider and access details
 provider "aws" {
   region = "${var.aws_region}"
 }
 
-# Declare the data source
 data "aws_availability_zones" "available" {}
 
 resource "aws_key_pair" "auth" {
@@ -11,7 +9,6 @@ resource "aws_key_pair" "auth" {
   public_key = "${file(var.public_key_path)}"
 }
 
-# Create a VPC to launch our instances into
 resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
     enable_dns_support = true
