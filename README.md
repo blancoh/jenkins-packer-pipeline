@@ -24,13 +24,17 @@ Jenkinsfile Pipeline script will execute the following steps.
 
 Requirements:
 
-Workspace cleanup plugin - https://plugins.jenkins.io/ws-cleanup
+Jenkins
 
-Github Authentication plugin
+Jenkins Workspace cleanup plugin
 
-CloudBees AWS Credentials plugins
+Jenkins Github Authentication plugin
 
-Pipeline plugin
+Jenkins CloudBees AWS Credentials plugin
+
+Jenkins Pipeline plugin
+
+Jenkins Ansicolor plugin
 
 Terraform
 
