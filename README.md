@@ -26,18 +26,18 @@ Requirements:
 
 Jenkins
 
-Jenkins Workspace cleanup plugin
-
-Jenkins Github Authentication plugin
+Jenkins Pipeline plugin
 
 Jenkins CloudBees AWS Credentials plugin
 
-Jenkins Pipeline plugin
+Jenkins Github Authentication plugin
+
+Jenkins Workspace cleanup plugin
 
 Jenkins Ansicolor plugin
 
-Terraform
+Terraform 
 
-Packer
+Packer 
 
 AWS CLI Tool
