@@ -35,3 +35,5 @@ Pipeline plugin
 Terraform
 
 Packer
+
+AWS CLI Tool
