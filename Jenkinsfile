@@ -19,7 +19,7 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'echo ${rhev_version}; echo ${build_method}'
+          sh 'echo ${rhev_version}; echo ${build_method}; echo ${hostname}'
         }
       }
     }
