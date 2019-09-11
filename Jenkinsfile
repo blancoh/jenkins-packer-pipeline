@@ -10,7 +10,7 @@ try {
   }
 
   // Run terraform init
-  stage('Terraform init') {
+  stage('Display choice paramters') {
     node {
       withCredentials([[
         $class: 'AmazonWebServicesCredentialsBinding',
