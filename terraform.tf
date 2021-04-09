@@ -36,7 +36,7 @@ resource "aws_route_table_association" "PublicSubnetA" {
 resource "aws_internet_gateway" "gw" {
    vpc_id = "${aws_vpc.default.id}"
     tags = {
-        Name = "Internet Gateway"
+        Name = "Packer_Internet_Gateway"
     }
 }
 
