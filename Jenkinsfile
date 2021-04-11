@@ -12,12 +12,7 @@ try {
   // Run terraform init
   stage('Display parameters') {
     node {
-      withCredentials([[
-        $class: 'AmazonWebServicesCredentialsBinding',
-        credentialsId: credentialsId,
-        accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-      ]]) {
+      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
         ansiColor('xterm') {
           sh '/usr/local/bin/terraform init'
         }
