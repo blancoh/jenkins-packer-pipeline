@@ -89,4 +89,3 @@ finally {
     currentBuild.result = 'SUCCESS'
   }
 }
-}
