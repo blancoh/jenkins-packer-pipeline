@@ -1,5 +1,3 @@
-String credentialsId = 'awsCredentials'
-
 try {
   stage('GIT checkout') {
     node {
