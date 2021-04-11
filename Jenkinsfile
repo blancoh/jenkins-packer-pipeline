@@ -10,7 +10,7 @@ try {
   }
 
   // Run terraform init
-  stage('Display parameters') {
+  stage('Terraform Init') {
     node {
       withAWS(credentials: 'aws_creds', region: 'us-east-1') {
         ansiColor('xterm') {
@@ -19,7 +19,61 @@ try {
       }
     }
   }
+  
+  // Run terraform plan
+  stage('Terraform Plan') {
+    node {
+      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+        ansiColor('xterm') {
+          sh '/usr/local/bin/terraform plan'
+        }
+      }
+    }
+  }
+  
+   stage('Apply Approval Input') {
+      input 'Approve Terraform apply?'
 
+    }
+
+ // if (env.BRANCH_NAME == 'master') {
+
+    // Run terraform apply
+    stage('Terraform apply') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh '/usr/local/bin/terraform apply -auto-approve'
+          }
+        }
+      }
+    }
+   // Run terraform show
+    stage('Terraform show') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh '/usr/local/bin/terraform show'
+          }
+        }
+      }
+    }
+ // }
+    stage('Destroy Approval Input') {
+      input 'Approve Terraform destroy?'
+
+    }
+    // Run terraform destroy
+    stage('Terraform destroy') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh '/usr/local/bin/terraform destroy -auto-approve'
+          }
+        }
+      }
+    }
+  
   currentBuild.result = 'SUCCESS'
 }
 catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException flowError) {
