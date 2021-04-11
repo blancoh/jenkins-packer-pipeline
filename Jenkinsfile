@@ -55,7 +55,6 @@ try {
   
     stage('Destroy Approval Input') {
       input 'Approve Terraform destroy?'
-
     }
   
     stage('Terraform destroy') {
