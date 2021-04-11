@@ -55,7 +55,7 @@ try {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
-            sh 'run_packer_build.sh'
+            sh 'bash ./run_packer_build.sh'
           }
         }
       }
