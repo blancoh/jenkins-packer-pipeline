@@ -51,6 +51,16 @@ try {
       }
     }
   
+   stage('Run Packer Build') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh 'run_packer_build.sh'
+          }
+        }
+      }
+    }
+  
     stage('Destroy Approval Input') {
       input 'Approve Terraform destroy?'
     }
