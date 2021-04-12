@@ -51,16 +51,6 @@ try {
       }
     }
   
-   stage('Build Nginx Container and store in ECR') {
-      node {
-        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-          ansiColor('xterm') {
-            sh 'bash ./build_nginx_container.sh'
-          }
-        }
-      }
-    }
-  
    stage('Build AMI VM') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
