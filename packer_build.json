@@ -33,7 +33,7 @@
         },
         {
             "type": "shell",
-            "script": "./build_nginx_container.sh"
+            "script": "sudo ./build_nginx_container.sh"
         }
     ]
 }
