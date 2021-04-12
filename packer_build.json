@@ -30,6 +30,10 @@
         {
             "type": "shell",
             "script": "./provision-vm.sh"
+        },
+        {
+            "type": "shell",
+            "script": "./build_nginx_container.sh"
         }
     ]
 }
