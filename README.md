@@ -5,7 +5,7 @@ Project Goal: Create an Amazon VPC, Build Custom Amazon Machine Image (AMI) and 
 Current OS: Ubuntu Bionic 18.04
 
 1) Download GIT repository
-2) Execute Jenkinsfie
+2) Execute Jenkinsfile pipeline script
 3) Run Terraform to create Amazon VPC
 4) Execute run_packer_build.sh script to build custom AMI with Packer.
 5) Terraform destroy to delete the Amazon Packer VPC.
