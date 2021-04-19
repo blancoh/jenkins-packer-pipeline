@@ -1,6 +1,7 @@
 #!/bin/bash
-repo_name="nginx-dhmf"
-repo_url="522939339121.dkr.ecr.us-east-1.amazonaws.com"
+repo_folder="$1"
+repo_name="$2"
+repo_url="$3"
 #Authenticate
 sudo PASSWD=`aws ecr get-login-password --region us-east-1`
 sudo docker login --username AWS -p ${PASSWD} ${repo_url}
@@ -16,5 +17,5 @@ sudo docker build  . -t ${repo_name}
 image_id=`sudo docker images | grep ${repo_name} | awk '{print $3}'  | sort -u`
 sudo echo $image_id
 # Tag and Push to Amazon ECR
-sudo docker tag ${image_id} 522939339121.dkr.ecr.us-east-1.amazonaws.com/ecrrepo001/${repo_name}:latest
-sudo docker push 522939339121.dkr.ecr.us-east-1.amazonaws.com/ecrrepo001/${repo_name}:latest
+sudo docker tag ${image_id} ${repo_url}/${repo_folder}/${repo_name}:latest
+sudo docker push ${repo_url}/${repo_folder}/${repo_name}:latest
