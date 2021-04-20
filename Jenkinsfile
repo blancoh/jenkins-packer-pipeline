@@ -51,6 +51,16 @@ try {
       }
     }
   
+   stage('Build Nginx Container') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh 'bash ./build_nginx_container.sh ecrrepo001 nginx-dhmf 522939339121.dkr.ecr.us-east-1.amazonaws.com'
+          }
+        }
+      }
+    }
+  
    stage('Build AMI VM') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
