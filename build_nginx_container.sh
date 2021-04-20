@@ -3,7 +3,7 @@ repo_folder="$1"
 repo_name="$2"
 repo_url="$3"
 #Authenticate
-sudo PASSWD=`aws ecr get-login-password --region us-east-1`
+PASSWD=`aws ecr get-login-password --region us-east-1`
 sudo docker login --username AWS -p ${PASSWD} ${repo_url}
 #Delete ECR Repository
 sudo aws ecr delete-repository --repository-name ecrrepo001/${repo_name} --force
