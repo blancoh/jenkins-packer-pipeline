@@ -26,10 +26,9 @@ try {
     }
   }
   
-   stage('Apply Approval Input') {
-      input 'Approve Terraform apply?'
-
-    }
+#   stage('Apply Approval Input') {
+#      input 'Approve Terraform apply?'
+#    }
 
     stage('Terraform apply') {
       node {
@@ -71,9 +70,9 @@ try {
       }
     }
   
-    stage('Destroy Approval Input') {
-      input 'Approve Terraform destroy?'
-    }
+#    stage('Destroy Approval Input') {
+#      input 'Approve Terraform destroy?'
+#    }
   
     stage('Terraform destroy') {
       node {
