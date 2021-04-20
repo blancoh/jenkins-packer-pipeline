@@ -6,9 +6,9 @@ repo_url="$3"
 PASSWD=`aws ecr get-login-password --region us-east-1`
 sudo docker login --username AWS -p ${PASSWD} ${repo_url}
 #Delete ECR Repository
-sudo aws ecr delete-repository --repository-name ecrrepo001/${repo_name} --force
+aws ecr delete-repository --repository-name ecrrepo001/${repo_name} --force
 #Create ECR Repository
-sudo aws ecr create-repository --repository-name ecrrepo001/${repo_name}
+aws ecr create-repository --repository-name ecrrepo001/${repo_name}
 #Clear local docker repository of old images
 for i in $(sudo docker images | grep ${repo_name} | awk '{print $3}');do sudo docker rmi -f $i;done
 #Build new Nginx container
