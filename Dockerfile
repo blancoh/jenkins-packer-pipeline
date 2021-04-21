@@ -1,21 +1,5 @@
-#
-# Nginx Dockerfile
-#
-# https://github.com/dockerfile/nginx
-#
-
-# Pull base image.
 FROM nginx
-
-# Define mountable directories.
-#VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
-
-# Define working directory.
-#WORKDIR /etc/nginx
-
-# Define default command.
-CMD ["nginx"]
-
-# Expose ports.
+COPY index.html /usr/share/nginx/html/index.html
+COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-#EXPOSE 443
+CMD ["nginx", "-g", "daemon off;"]
