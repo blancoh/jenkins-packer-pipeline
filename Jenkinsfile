@@ -1,5 +1,5 @@
 try {
-  stage('GIT checkout') {
+  stage('GIT Checkout') {
     node {
       cleanWs()
       checkout scm
@@ -30,7 +30,7 @@ try {
 //     input 'Approve Terraform apply?'
 //    }
 
-    stage('Terraform apply') {
+    stage('Terraform Apply') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -40,7 +40,7 @@ try {
       }
     }
   
-    stage('Terraform show') {
+    stage('Terraform Show') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -50,7 +50,7 @@ try {
       }
     }
   
-   stage('Build Nginx Container') {
+   stage('Build Custom Nginx Container') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -60,7 +60,7 @@ try {
       }
     }
   
-   stage('Build AMI VM') {
+   stage('Build Custom Docker AMI') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -74,7 +74,7 @@ try {
 //      input 'Approve Terraform destroy?'
 //    }
   
-    stage('Terraform destroy') {
+    stage('Terraform Destroy') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
