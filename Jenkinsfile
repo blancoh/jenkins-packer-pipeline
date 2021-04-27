@@ -18,40 +18,39 @@ try {
       }
     }
   
-  stage('Terraform Init and Plan') {
+  stage('Terraform Init') {
     node {
       withAWS(credentials: 'aws_creds', region: 'us-east-1') {
         ansiColor('xterm') {
-          sh '/usr/local/bin/terraform init',
+          sh '/usr/local/bin/terraform init'
+        }
+      }
+    }
+  }
+  
+  stage('Terraform Plan') {
+    node {
+      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+        ansiColor('xterm') {
           sh '/usr/local/bin/terraform plan'
         }
       }
     }
   }
   
-//  stage('Terraform Plan') {
-//    node {
-//      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-//        ansiColor('xterm') {
-//          sh '/usr/local/bin/terraform plan'
-//        }
-//      }
-//    }
- // }
-  
 //   stage('Apply Approval Input') {
 //     input 'Approve Terraform apply?'
 //    }
 
-    stage('Terraform Apply') {
-      node {
-        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-          ansiColor('xterm') {
-            sh '/usr/local/bin/terraform apply -auto-approve'
-          }
+  stage('Terraform Apply') {
+    node {
+      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+        ansiColor('xterm') {
+          sh '/usr/local/bin/terraform apply -auto-approve'
         }
       }
-    }
+    }   
+  }
   
     stage('Terraform Show') {
       node {
