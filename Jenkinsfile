@@ -5,7 +5,17 @@ try {
       checkout scm
     }
   }
-
+  
+  stage('Build Custom Nginx Container') {
+      node {
+        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
+          ansiColor('xterm') {
+            sh 'bash ./build_nginx_container.sh ecrrepo001 nginx-dhmf 522939339121.dkr.ecr.us-east-1.amazonaws.com'
+          }
+        }
+      }
+    }
+  
   stage('Terraform Init') {
     node {
       withAWS(credentials: 'aws_creds', region: 'us-east-1') {
@@ -45,16 +55,6 @@ try {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
             sh '/usr/local/bin/terraform show'
-          }
-        }
-      }
-    }
-  
-   stage('Build Custom Nginx Container') {
-      node {
-        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-          ansiColor('xterm') {
-            sh 'bash ./build_nginx_container.sh ecrrepo001 nginx-dhmf 522939339121.dkr.ecr.us-east-1.amazonaws.com'
           }
         }
       }
