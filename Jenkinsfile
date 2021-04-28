@@ -8,7 +8,7 @@ try {
     }
   }
   
-  stage('Build Custom Nginx Container') {
+  stage('Build Nginx Container') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -30,41 +30,7 @@ try {
     }
   }
   
-//  stage('Terraform Plan') {
-//   node {
-//      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-//        ansiColor('xterm') {
-//          sh '/usr/local/bin/terraform plan'
-//        }
-//      }
-//    }
-//  }
-  
-//   stage('Apply Approval Input') {
-//     input 'Approve Terraform apply?'
-//    }
-
-//  stage('Terraform Apply') {
-//    node {
-//      withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-//        ansiColor('xterm') {
-//          sh '/usr/local/bin/terraform apply -auto-approve'
-//        }
-//      }
-//    }   
- // }
-  
-//    stage('Terraform Show') {
-//      node {
-//        withAWS(credentials: 'aws_creds', region: 'us-east-1') {
-//          ansiColor('xterm') {
-//            sh '/usr/local/bin/terraform show'
-//          }
-//        }
-//      }
-//    }
-  
-   stage('Build Custom Docker AMI') {
+   stage('Build Docker AMI') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
@@ -73,10 +39,6 @@ try {
         }
       }
     }
-  
-//    stage('Destroy Approval Input') {
-//      input 'Approve Terraform destroy?'
-//    }
   
     stage('Destroy Amazon VPC') {
       node {
