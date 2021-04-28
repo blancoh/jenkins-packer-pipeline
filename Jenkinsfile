@@ -30,7 +30,7 @@ try {
     }
   }
   
-   stage('Build Docker AMI') {
+   stage('Build Docker VM') {
       node {
         withAWS(credentials: 'aws_creds', region: 'us-east-1') {
           ansiColor('xterm') {
