@@ -12,9 +12,4 @@ Detailed Steps:
 5) Execute Packer to provision AMI
 6) Run Terraform to destroy Amazon VPC
 
-Requirements:
-Jenkins
-Terraform
-Ansible
-Packer 
-AWSCLI
+Requirements: Jenkins, Terraform, Ansible, Packer , AWSCLI
