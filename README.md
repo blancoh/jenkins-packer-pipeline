@@ -11,11 +11,11 @@ Current container: Official Nginx container
 3) Run Terraform to create Amazon VPC
 4) Build custom AMI using Packer
 5) Build custom Nginx container and store in ECR
-6) Terraform Destroy
+6) Run Terraform to destroy Amazon VPC
 
 Requirements:
 Jenkins
 Terraform
 Ansible
 Packer 
-AWS-CLI
+AWSCLI
