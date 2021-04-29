@@ -1,16 +1,15 @@
 # Jenkins Packer Build Pipeline
 
-Project Goal: Create an Amazon VPC, Build Custom Amazon Machine Image (AMI) and Nginx Container stored in ECR then Destroy the Amazon VPC once completed. 
+Project Goal: Build custom Nginx container and Amazon Machine Image (AMI)
 
 Current OS: Ubuntu Bionic 18.04
 
-Current container: Official Nginx container
-
+Detailed Steps:
 1) Download GIT repository
 2) Execute Jenkinsfile pipeline script
-3) Run Terraform to create Amazon VPC
-4) Build custom AMI using Packer
-5) Build custom Nginx container and store in ECR
+3) Build custom Nginx container and store in Amazon ECR
+4) Run Terraform to create Amazon VPC
+5) Execute Packer to provision AMI
 6) Run Terraform to destroy Amazon VPC
 
 Requirements:
